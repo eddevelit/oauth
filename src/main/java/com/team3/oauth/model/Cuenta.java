@@ -1,7 +1,11 @@
 package com.team3.oauth.model;
 
 public class Cuenta {
-	public int id;
+	private int id;
+	private double Saldo;
+	private String Ejecutivo;
+	private int id_cliente;
+	
 	public int getId() {
 		return id;
 	}
@@ -26,7 +30,4 @@ public class Cuenta {
 	public void setId_cliente(int id_cliente) {
 		this.id_cliente = id_cliente;
 	}
-	public double Saldo;
-	public String Ejecutivo;
-	public int id_cliente;
 }
