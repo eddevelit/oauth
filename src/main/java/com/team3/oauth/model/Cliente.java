@@ -1,10 +1,26 @@
 package com.team3.oauth.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Cliente")
+
 public class Cliente {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column
 	private String Nombre;
+	
+	@Column
 	private String Direccion;
+	
+	@Column
 	private String Correo;
+	
+	@Column
 	private String Telefono;
 	
 	public int getId() {

@@ -19,12 +19,14 @@ BEGIN
 	#Declarando variable donde se gaurdará el ultimo id de tabla cliente
 	DECLARE _ultimoId INT;
 	#Insertando a tabla cliente
-	INSERT INTO banco.cliente(nombre, direccion, telefono, correo) VALUES (_nombre, _direccion, _telefono, _correo);
+	#INSERT INTO banco.cliente(nombre, direccion, telefono, correo) VALUES (_nombre, _direccion, _telefono, _correo);
+	INSERT INTO info_banco2.cliente3(cliente3.Nombre, cliente3.Direccion, cliente3.Telefono, cliente3.Correo) VALUES (_nombre, _direccion, _telefono, _correo);
 	#Obteniendo ultimo id de cliente
-	SET _ultimoId = (SELECT MAX(id) AS id FROM cliente);
+	SET _ultimoId = (SELECT MAX(id) AS id FROM cliente3);
 	#Insertando a tabla cuenta
-	INSERT INTO banco.cuenta (saldo, ejecutivo, id_cliente) VALUES (_saldo, _ejecutivo, _ultimoId);
+	#INSERT INTO banco.cuenta (saldo, ejecutivo, id_cliente) VALUES (_saldo, _ejecutivo, _ultimoId);
+	INSERT INTO info_banco2.cuenta3(cuenta3.Saldo, cuenta3.Ejecutivo, cuenta3.id_cliente) VALUES (_saldo, _ejecutivo, _ultimoId);
 	#Enviando parámetros de salida
-	SELECT cuenta.id, cuenta.Saldo, cuenta.Ejecutivo, cuenta.id_cliente INTO _idCuenta, _saldoOut, _ejecutivoOut, _idCliente FROM cuenta WHERE cuenta.id = _ultimoId;
+	SELECT cuenta3.id, cuenta3.Saldo, cuenta3.Ejecutivo, cuenta3.id_cliente INTO _idCuenta, _saldoOut, _ejecutivoOut, _idCliente FROM cuenta3 WHERE cuenta3.id = _ultimoId;
 END $$
 DELIMITER ;
