@@ -1,17 +1,26 @@
 package com.team3.oauth.model;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Cliente {
-	private int id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int idcliente;
 	private String Nombre;
 	private String Direccion;
 	private String Correo;
 	private String Telefono;
 	
 	public int getId() {
-		return id;
+		return idcliente;
 	}
 	public void setId(int id) {
-		this.id = id;
+		this.idcliente = id;
 	}
 	public String getNombre() {
 		return Nombre;
