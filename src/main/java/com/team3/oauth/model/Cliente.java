@@ -3,7 +3,7 @@ package com.team3.oauth.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Cliente")
+@Table(name = "Cliente3")
 
 public class Cliente {
 	

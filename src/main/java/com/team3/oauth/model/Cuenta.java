@@ -1,9 +1,27 @@
 package com.team3.oauth.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Cuenta3")
 public class Cuenta {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column
 	private double Saldo;
+	
+	@Column
 	private String Ejecutivo;
+	
+	@Column
 	private int id_cliente;
 	
 	public int getId() {
